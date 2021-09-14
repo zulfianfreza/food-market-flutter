@@ -14,56 +14,55 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Stack(
-      children: [
-        Container(
-          color: Colors.white,
-        ),
-        SafeArea(
-          child: Container(
-            color: 'FAFAFC'.toColor(),
+      body: Stack(
+        children: [
+          Container(
+            color: Colors.white,
           ),
-        ),
-        SafeArea(
-          child: PageView(
-            controller: pageController,
-            onPageChanged: (index) {
-              setState(() {
-                selectedPage = index;
-              });
-            },
-            children: [
-              Center(
-                child: Text(
-                  'HOme',
-                ),
-              ),
-              Center(
-                child: Text(
-                  'Order',
-                ),
-              ),
-              Center(
-                child: Text(
-                  'Profile',
-                ),
-              ),
-            ],
+          SafeArea(
+            child: Container(
+              color: 'FAFAFC'.toColor(),
+            ),
           ),
-        ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: CustomBottomNavbar(
-            selectedIndex: selectedPage,
-            onTap: (index) {
-              setState(() {
-                selectedPage = index;
-              });
-              pageController.jumpToPage(selectedPage);
-            },
+          SafeArea(
+            child: PageView(
+              controller: pageController,
+              onPageChanged: (index) {
+                setState(() {
+                  selectedPage = index;
+                });
+              },
+              children: [
+                Center(
+                  child: FoodPage(),
+                ),
+                Center(
+                  child: Text(
+                    'Order',
+                  ),
+                ),
+                Center(
+                  child: Text(
+                    'Profile',
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
-    ));
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: CustomBottomNavbar(
+              selectedIndex: selectedPage,
+              onTap: (index) {
+                setState(() {
+                  selectedPage = index;
+                });
+                pageController.jumpToPage(selectedPage);
+              },
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
