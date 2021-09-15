@@ -21,3 +21,4 @@ part 'illustration_page.dart';
 part 'success_order_page.dart';
 part 'success_signup_page.dart';
 part 'order_history_page.dart';
+part 'profile_page.dart';
