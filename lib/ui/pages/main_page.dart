@@ -37,9 +37,7 @@ class _MainPageState extends State<MainPage> {
                   child: FoodPage(),
                 ),
                 Center(
-                  child: Text(
-                    'Order',
-                  ),
+                  child: OrderHistoryPage(),
                 ),
                 Center(
                   child: Text(
